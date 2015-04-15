@@ -1,0 +1,776 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=IE8" />
+		<title>Big Bang Game Editor</title>
+		<link rel="stylesheet" href="../css/style.css">
+		<link rel="stylesheet" href="css/editor_style.css">
+		<link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.min.css" rel="stylesheet">
+		<script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js" ></script>
+		<script type="" src="js/levelEditor.js"></script>
+		<script type="text/javascript" src="../js/atom.js"> </script>
+	</head>
+	<body onLoad="BBE({com: 'init'})">
+		<canvas id="gameCanvas"
+				width="755"
+				height="650"
+				class="canvasArea"
+				oncontextmenu="return false;" 
+				onselectstart="return false;">
+			Your browser does not appear to support HTML5.  Try upgrading your browser to the latest version.
+			<a href="http://www.whatbrowser.org">What is a browser?</a>
+			<br/><br/>
+			<a href="http://www.microsoft.com/windows/internet-explorer/default.aspx">Microsoft Internet Explorer</a><br/>
+			<a href="http://www.mozilla.com/firefox/">Mozilla Firefox</a><br/>
+			<a href="http://www.google.com/chrome/">Google Chrome</a><br/>
+			<a href="http://www.apple.com/safari/download/">Apple Safari</a><br/>
+			<a href="http://www.google.com/chromeframe">Google Chrome Frame for Internet Explorer</a><br/>
+		</canvas>
+		<div class="grid_toggle">
+			<button id="grid_button"
+					class="btn btn-inverse">Grid</button>
+		</div>
+		<div class="user_help">
+			<button id="help_button"
+					class="btn btn-info">Help</button>
+		</div>
+		<div class="test_play">
+			<button id="play_button"
+					class="btn btn-success">Play</button>
+		</div>
+		<div class="generator_pane">
+			<div>
+				<h5>Drop List<br/>Paint Keys</h5>
+				<table>
+					<tr><td class='user_key'>space</td><td class='piece_def'>insert atom</td></tr>
+					<tr><td class='user_key'>x</td><td class='piece_def'>delete atom</td></tr>
+					<tr><td class='user_key'>z</td><td class='piece_def'>random color</td></tr>
+					<tr><td class='user_key'>1</td><td class='piece_def'>red color</td></tr>
+					<tr><td class='user_key'>2</td><td class='piece_def'>pink color</td></tr>
+					<tr><td class='user_key'>3</td><td class='piece_def'>blue color</td></tr>
+					<tr><td class='user_key'>4</td><td class='piece_def'>cyan color</td></tr>
+					<tr><td class='user_key'>5</td><td class='piece_def'>orange color</td></tr>
+					<tr><td class='user_key'>6</td><td class='piece_def'>purple color</td></tr>
+					<tr><td class='user_key'>7</td><td class='piece_def'>yellow color</td></tr>
+					<tr><td class='user_key'>8</td><td class='piece_def'>brown color</td></tr>
+					<tr><td class='user_key'>9</td><td class='piece_def'>tan color</td></tr>
+					<tr><td class='user_key'>a</td><td class='piece_def'>atom</td></tr>
+					<tr><td class='user_key'>r</td><td class='piece_def'>radiative atom</td></tr>
+					<tr><td class='user_key'>h</td><td class='piece_def'>black hole</td></tr>
+					<tr><td class='user_key'>f</td><td class='piece_def'>freeze</td></tr>                    
+					<tr><td class='user_key'>v</td><td class='piece_def'>void</td></tr>
+					<tr><td class='user_key'>m</td><td class='piece_def'>anti-matter</td></tr>
+					<tr><td class='user_key'>\</td><td class='piece_def'>cycle power-ups</td></tr>
+					<tr><td class='user_key'>enter&nbsp;&nbsp;</td><td class='piece_def'>big bang</td></tr>
+					<tr><td class='user_key'>-</td><td class='piece_def'>decrease counter</td></tr>
+					<tr><td class='user_key'>+</td><td class='piece_def'>increase counter</td></tr>
+				</table>
+			</div>
+		</div>
+		<div class="help_pane">
+			<div>
+				<h5>Paint Keys</h5>
+				<table>
+					<tr><td class='user_key'>x</td><td class='piece_def'>set hex unused</td></tr>
+					<tr><td class='user_key'>space</td><td class='piece_def'>clear hex</td></tr>
+					<tr><td class='user_key'>1</td><td class='piece_def'>red color</td></tr>
+					<tr><td class='user_key'>2</td><td class='piece_def'>pink color</td></tr>
+					<tr><td class='user_key'>3</td><td class='piece_def'>blue color</td></tr>
+					<tr><td class='user_key'>4</td><td class='piece_def'>cyan color</td></tr>
+					<tr><td class='user_key'>5</td><td class='piece_def'>orange color</td></tr>
+					<tr><td class='user_key'>6</td><td class='piece_def'>purple color</td></tr>
+					<tr><td class='user_key'>7</td><td class='piece_def'>yellow color</td></tr>
+					<tr><td class='user_key'>8</td><td class='piece_def'>brown color</td></tr>
+					<tr><td class='user_key'>9</td><td class='piece_def'>tan color</td></tr>
+					<tr><td class='user_key'>a</td><td class='piece_def'>atom</td></tr>
+					<tr><td class='user_key'>z</td><td class='piece_def'>random atom</td></tr>
+					<tr><td class='user_key'>r</td><td class='piece_def'>radiative atom</td></tr>
+					<tr><td class='user_key'>h</td><td class='piece_def'>black hole</td></tr>
+					<tr><td class='user_key'>n</td><td class='piece_def'>nucleus</td></tr>
+					<tr><td class='user_key'>f</td><td class='piece_def'>freeze</td></tr>                    
+					<tr><td class='user_key'>v</td><td class='piece_def'>void</td></tr>
+					<tr><td class='user_key'>m</td><td class='piece_def'>anti-matter</td></tr>
+					<tr><td class='user_key'>!</td><td class='piece_def'>absorber</td></tr>
+					<tr><td class='user_key'>@</td><td class='piece_def'>absorber x2</td></tr>
+					<tr><td class='user_key'>#</td><td class='piece_def'>absorber x3</td></tr>
+					<tr><td class='user_key'>$</td><td class='piece_def'>absorber x4</td></tr>
+					<tr><td class='user_key'>%</td><td class='piece_def'>absorber x5</td></tr>
+					<tr><td class='user_key'>^</td><td class='piece_def'>absorber x6</td></tr>
+					<tr><td class='user_key'>&</td><td class='piece_def'>absorber x7</td></tr>
+					<tr><td class='user_key'>c</td><td class='piece_def'>crystal</td></tr>
+					<tr><td class='user_key'>\</td><td class='piece_def'>cycle power-ups</td></tr>
+					<tr><td class='user_key'>enter</td><td class='piece_def'>big bang</td></tr>
+					<tr><td class='user_key'>b</td><td class='piece_def'>cycle bonds</td></tr>
+					<tr><td class='user_key'>q</td><td class='piece_def'>clear all points</td></tr>
+					<tr><td class='user_key'>e</td><td class='piece_def'>entry point</td></tr>
+					<tr><td class='user_key'>w</td><td class='piece_def'>exit point</td></tr>
+					<tr><td class='user_key'>d</td><td class='piece_def'>remove shield</td></tr>
+					<tr><td class='user_key'>s</td><td class='piece_def'>add shield</td></tr>
+					<tr><td class='user_key'>p</td><td class='piece_def'>remove radiation</td></tr>
+					<tr><td class='user_key'>[</td><td class='piece_def'>add radiation</td></tr>
+					<tr><td class='user_key'>]</td><td class='piece_def'>add radiative</td></tr>
+					<tr><td class='user_key'>k</td><td class='piece_def'>remove bonding</td></tr>
+					<tr><td class='user_key'>l</td><td class='piece_def'>add bonding</td></tr>
+					<tr><td class='user_key'>-</td><td class='piece_def'>decrease counter</td></tr>
+					<tr><td class='user_key'>+</td><td class='piece_def'>increase counter</td></tr>
+					<tr><td class='user_key'>,</td><td class='piece_def'>clear creator</td></tr>
+					<tr><td class='user_key'>.</td><td class='piece_def'>set creator</td></tr>
+					<tr><td class='user_key'>o</td><td class='piece_def'>atom generator</td></tr>
+					<tr><td class='user_key'>&lt;</td><td class='piece_def'>undefine creator</td></tr>
+					<tr><td class='user_key'>&gt;</td><td class='piece_def'>define creator</td></tr>
+					<tr><td class='user_key'>u</td><td class='piece_def'>clear start fog</td></tr>
+					<tr><td class='user_key'>i</td><td class='piece_def'>add start fog</td></tr>
+				</table>
+				<h5>Drag/Drop Keys</h5>
+				<table>
+					<tr><td class='user_key'>t</td><td class='piece_def'>set teleporter</td></tr>
+					<tr><td class='user_key'>left</td><td class='piece_def'>fall left</td></tr>
+					<tr><td class='user_key'>down</td><td class='piece_def'>fall down</td></tr>
+					<tr><td class='user_key'>right</td><td class='piece_def'>fall right</td></tr>
+				</table>
+				<h5>Mode Keys</h5>
+				<table>
+					<tr><td class='user_key'>`</td><td class='piece_def'>toggle notes</td></tr>
+					<tr><td class='user_key'>~</td><td class='piece_def'>create a note</td></tr>
+				</table>
+			</div>
+		</div>
+		<div class="edit_pane">
+			<div>
+				<input id='level_id'
+					class='msnoclear'
+					type='text'
+					placeholder='Enter Level'
+					autocomplete='off'
+					onkeyup='BBE({com: "displayElement", element: "clear_level_id", display_type: "block"})'>
+				<button id="clear_level_id" class="clr_txt_btn" onclick="BBE({com: 'clearTextArea', text_area_id: 'level_id', self_id: 'clear_level_id'});"></button>
+				<button id='load_level'
+						class='btn btn-info'>LOAD</button>
+				<button id='save_level'
+						class='btn btn-success'>SAVE</button>
+			</div>
+			<div class='filename_div'>
+				<input id='background_filename'
+					type='text'
+					class='msnoclear'
+					placeholder='Enter Background'
+					autocomplete='off'
+					onkeyup='BBE({com: "displayElement", element: "clear_background_filename", display_type: "block"})'>
+				<button id="clear_background_filename" class="clr_txt_btn" onclick="BBE({com: 'clearTextArea', text_area_id: 'background_filename', self_id: 'clear_background_filename'})"></button>
+				<br/>
+				<button id='load_background'
+						class='btn btn-success'>LOAD</button>
+				<button id='clear_background'
+						class='btn btn-danger'>CLEAR</button>
+			</div>
+			<div class="check_list">
+				<div>
+					<div id='color_tab'
+						class='requirement_header'
+						onclick='BBE({com: "openTab", tab: "colors"})'>
+						<span class='icon icon-folder-close'></span>&nbsp;COLORS
+					</div>
+					<div id='colors_body' class='requirement_body'>
+						<input type="checkbox" id="color_r">Red (r)[1]<span class="c1 color-box">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><br/>
+						<input type="checkbox" id="color_p">Pink (p)[2]<span class="c2 color-box">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><br/>
+						<input type="checkbox" id="color_b">Blue (b)[3]<span class="c3 color-box">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><br/>
+						<input type="checkbox" id="color_c">Cyan (c)[4]<span class="c4 color-box">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><br/>
+						<input type="checkbox" id="color_o">Orange (o)[5]<span class="c5 color-box">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><br/>
+						<input type="checkbox" id="color_v">Purple (v)[6]<span class="c6 color-box">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><br/>
+						<input type="checkbox" id="color_y">Yellow (y)[7]<span class="c7 color-box">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><br/>
+						<input type="checkbox" id="color_w">Brown (w)[8]<span class="c8 color-box">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><br/>
+						<input type="checkbox" id="color_t">Tan (t)[9]<span class="c9 color-box">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+					</div>
+				</div>
+				<div>
+					<div id='types_tab'
+						class='requirement_header'
+						onclick='BBE({com: "openTab", tab: "types"})'>
+						<span class='icon icon-folder-close'></span>&nbsp;TYPES
+					</div>
+					<div id='types_body'
+						 class='requirement_body check_list'>
+						<input type="checkbox"
+							id="use_hole">Black Holes<br/>
+						<input type="text"
+							id="hole_counts"
+							class="requirement_moves"
+							placeholder="Moves">
+						<input type="text"
+							id="hole_percent"
+							class="requirement_moves"
+							placeholder="Drop%">
+						<br/>
+						<input type="checkbox"
+							id="use_anti">Antimatter<br/>
+						<input type="text"
+							id="anti_counts"
+							class="requirement_moves"
+							placeholder="Moves">
+						<input type="text"
+							id="anti_percent"
+							class="requirement_moves"
+							placeholder="Drop%">
+						<br/>
+						<input type="checkbox"
+							id="use_radio">Radioactive<br/>
+						<input type="text"
+							id="radio_counts"
+							class="requirement_moves"
+							placeholder="Moves">
+						<input type="text"
+							id="radio_percent"
+							class="requirement_moves"
+							placeholder="Drop%">
+						<br/>
+						<input type="checkbox"
+							id="use_void">Voids<br/>
+						<input type="text"
+							id="void_counts"
+							class="requirement_moves"
+							placeholder="Moves">
+						<input type="text"
+							id="void_percent"
+							class="requirement_moves"
+							placeholder="Drop%">
+						<br/>
+						<input type="checkbox"
+							id="use_freeze">Freeze<br/>
+						<input type="text"
+							id="freeze_counts"
+							class="requirement_moves"
+							placeholder="Moves">
+						<input type="text"
+							id="freeze_percent"
+							class="requirement_moves"
+							placeholder="Drop%">
+					</div>
+				</div>
+			</div>
+			<div>
+				<b>REQUIREMENTS</b><br/>
+				<div>
+					<div id='general_tab'
+						class='requirement_header'
+						onclick='BBE({com: "openTab", tab: "general"})'>
+						<span class='icon icon-folder-close'></span>&nbsp;GENERAL
+					</div>
+					<div id='general_body'
+						class='requirement_body'>
+						<span class='requirement_line'>
+							Score x1:&nbsp;
+						</span>
+						<input id='score_needed_1'
+							type='text'
+							class='requirement_input'
+							placeholder='Points'>
+						<br/>
+						<span class='requirement_line'>
+							Score x2:&nbsp;
+						</span>
+						<input id='score_needed_2'
+							type='text'
+							class='requirement_input'
+							placeholder='Points'>
+						<br/>
+						<span class='requirement_line'>
+							Score x3:&nbsp;
+						</span>
+						<input id='score_needed_3'
+							type='text'
+							class='requirement_input'
+							placeholder='Points'>
+						<br/>
+						<span class='requirement_line'>
+							Moves:&nbsp;
+						</span>
+						<input id='moves_allowed'
+							type='text'
+							class='requirement_input'
+							placeholder='Switches'>
+						<br/>
+						<span class='requirement_line'>
+							Time:&nbsp;
+						</span>
+						<input id='time_limit'
+							type='text'
+							class='requirement_input'
+							placeholder='Time'>
+					</div>
+					<div id='goals_tab'
+						class='requirement_header'
+						onclick='BBE({com: "openTab", tab: "goals"})'>
+						<span class='icon icon-folder-close'></span>&nbsp;GOALS
+					</div>
+					<div id='goals_body'
+						class='requirement_body'>
+						<span class='requirement_line'>
+							Bonds:&nbsp;
+						</span>
+						<input id='break_bonds'
+							type='text'
+							class='requirement_number'
+							placeholder='Amount'>
+						<br/>
+						<span class='requirement_line'>
+							Nucleus:&nbsp;
+						</span>
+						<input id='fill_nucleus'
+							type='text'
+							class='requirement_number'
+							placeholder='Amount'>
+						<br/>
+						<span class='requirement_line'>
+							Anti:&nbsp;
+						</span>
+						<input id='rid_antimatter'
+							type='text'
+							class='requirement_number'
+							placeholder='Amount'>
+						<br/>
+						REMOVE ALL<br/>
+						<input type="checkbox"
+							id="clear_radio"
+							class="general_check">Radioactive<br/>
+						<input type="checkbox"
+							id="clear_crystal"
+							class="general_check">Crystal
+					</div>
+					<div id='matches_tab'
+						class='requirement_header'
+						onclick='BBE({com: "openTab", tab: "matches"})'>
+						<span class='icon icon-folder-close'></span>&nbsp;MATCHES
+					</div>
+					<div id='matches_body'
+						class='requirement_body'>
+						<span class='requirement_line'>
+							R:&nbsp;
+						</span>
+						<input id='match_r'
+								type='text'
+								class='requirement_count'
+								placeholder='#'>
+						<span class='requirement_line'>
+							P:&nbsp;
+						</span>
+						<input id='match_p'
+								type='text'
+								class='requirement_count'
+								placeholder='#'>
+						<br/>
+						<span class='requirement_line'>
+							B:&nbsp;
+						</span>
+						<input id='match_b'
+								type='text'
+								class='requirement_count'
+								placeholder='#'>
+						<span class='requirement_line'>
+							C:&nbsp;
+						</span>
+						<input id='match_c'
+								type='text'
+								class='requirement_count'
+								placeholder='#'>
+						<br/>
+						<span class='requirement_line'>
+							O:&nbsp;
+						</span>
+						<input id='match_o'
+								type='text'
+								class='requirement_count'
+								placeholder='#'>
+						<span class='requirement_line'>
+							V:&nbsp;
+						</span>
+						<input id='match_v'
+								type='text'
+								class='requirement_count'
+								placeholder='#'>
+						<br/>
+						<span class='requirement_line'>
+							Y:&nbsp;
+						</span>
+						<input id='match_y'
+								type='text'
+								class='requirement_count'
+								placeholder='#'>
+						<span class='requirement_line'>
+							W:&nbsp;
+						</span>
+						<input id='match_w'
+								type='text'
+								class='requirement_count'
+								placeholder='#'>
+						<br/>
+						<span class='requirement_line'>
+							T:&nbsp;
+						</span>
+						<input id='match_t'
+								type='text'
+								class='requirement_count'
+								placeholder='#'>
+						<span class='requirement_line'>
+							4C:&nbsp;
+						</span>
+						<input id='match_4C'
+								type='text'
+								class='requirement_count'
+								placeholder='#'>
+						<br/>
+						<span class='requirement_line'>
+							5:
+						</span>
+						<input id='match_5'
+								type='text'
+								class='requirement_count'
+								placeholder='#'>
+						<span class='requirement_line'>
+							5C:
+						</span>
+						<input id='match_5C'
+								type='text'
+								class='requirement_count'
+								placeholder='#'>
+						<br/>
+						<span class='requirement_line'>
+							6:
+						</span>
+						<input id='match_6'
+								type='text'
+								class='requirement_count'
+								placeholder='#'>
+						<span class='requirement_line'>
+							6C:
+						</span>
+						<input id='match_6C'
+								type='text'
+								class='requirement_count'
+								placeholder='#'>
+						<br/>
+						<span class='requirement_line'>
+							7:
+						</span>
+						<input id='match_7'
+								type='text'
+								class='requirement_count'
+								placeholder='#'>
+						<span class='requirement_line'>
+							X:
+						</span>
+						<input id='match_X'
+								type='text'
+								class='requirement_count'
+								placeholder='#'>
+					</div>
+					<div id='combos_tab'
+						class='requirement_header'
+						onclick='BBE({com: "openTab", tab: "combos"})'>
+						<span class='icon icon-folder-close'></span>&nbsp;COMBOS
+					</div>
+					<div id='combos_body'
+						class='combos_body'>
+						<div>
+							<span class='requirement_line'>
+								4C:&nbsp;
+							</span>
+							<input id='combo_4C4C'
+									type='text'
+									class='requirement_count'
+									placeholder='4C'>
+							<input id='combo_4C5'
+									type='text'
+									class='requirement_count'
+									placeholder='5'>
+							<input id='combo_4C5C'
+									type='text'
+									class='requirement_count'
+									placeholder='5C'>
+							<input id='combo_4C6'
+									type='text'
+									class='requirement_count'
+									placeholder='6'>
+							<input id='combo_4C6C'
+									type='text'
+									class='requirement_count'
+									placeholder='6C'>
+							<input id='combo_4C7'
+									type='text'
+									class='requirement_count'
+									placeholder='7'>
+							<br/>
+							<span class='requirement_line'>
+								5:&nbsp;
+							</span>
+							<input id='combo_55'
+									type='text'
+									class='requirement_count'
+									placeholder='5'>
+							<input id='combo_55C'
+									type='text'
+									class='requirement_count'
+									placeholder='5C'>
+							<input id='combo_56'
+									type='text'
+									class='requirement_count'
+									placeholder='6'>
+							<input id='combo_56C'
+									type='text'
+									class='requirement_count'
+									placeholder='6C'>
+							<input id='combo_57'
+									type='text'
+									class='requirement_count'
+									placeholder='7'>
+							<br/>
+							<span class='requirement_line'>
+								5C:&nbsp;
+							</span>
+							<input id='combo_5C5C'
+									type='text'
+									class='requirement_count'
+									placeholder='5C'>
+							<input id='combo_5C6'
+									type='text'
+									class='requirement_count'
+									placeholder='6'>
+							<input id='combo_5C6C'
+									type='text'
+									class='requirement_count'
+									placeholder='6C'>
+							<input id='combo_5C7'
+									type='text'
+									class='requirement_count'
+									placeholder='7'>
+							<br/>
+							<span class='requirement_line'>
+								6:&nbsp;
+							</span>
+							<input id='combo_66'
+									type='text'
+									class='requirement_count'
+									placeholder='6'>
+							<input id='combo_66C'
+									type='text'
+									class='requirement_count'
+									placeholder='6C'>
+							<input id='combo_67'
+									type='text'
+									class='requirement_count'
+									placeholder='7'>
+							<br/>
+							<span class='requirement_line'>
+								6C:&nbsp;
+							</span>
+							<input id='combo_6C6C'
+									type='text'
+									class='requirement_count'
+									placeholder='6C'>
+							<input id='combo_6C7'
+									type='text'
+									class='requirement_count'
+									placeholder='7'>
+							<br/>
+							<span class='requirement_line'>
+								7:
+							</span>
+							<input id='combo_77'
+									type='text'
+									class='requirement_count'
+									placeholder='7'>
+						</div>
+					</div>
+					<div id='compounds_tab'
+						class='requirement_header'
+						onclick='BBE({com: "openTab", tab: "compounds"})'>
+						<span class='icon icon-folder-close'></span>&nbsp;COMPOUNDS
+					</div>
+					<div id='compounds_body'
+						class='requirement_body'>
+						<input id='compounds_1'
+								type='text'
+								class='requirement_count'
+								placeholder='#'>
+						<input id='compound_1'
+								type='text'
+								class='requirement_compound'
+								placeholder='Compound'>
+						<br/>
+						<input id='compounds_2'
+								type='text'
+								class='requirement_count'
+								placeholder='#'>
+						<input id='compound_2'
+								type='text'
+								class='requirement_compound'
+								placeholder='Compound'>
+						<br/>
+						<input id='compounds_3'
+								type='text'
+								class='requirement_count'
+								placeholder='#'>
+						<input id='compound_3'
+								type='text'
+								class='requirement_compound'
+								placeholder='Compound'>
+						<br/>
+						<input id='compounds_4'
+								type='text'
+								class='requirement_count'
+								placeholder='#'>
+						<input id='compound_4'
+								type='text'
+								class='requirement_compound'
+								placeholder='Compound'>
+						<br/>
+						<input id='compounds_5'
+								type='text'
+								class='requirement_count'
+								placeholder='#'>
+						<input id='compound_5'
+								type='text'
+								class='requirement_compound'
+								placeholder='Compound'>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="generator_menu">
+			<div class="generator_blocker">
+			</div>
+			<div class="generator_data">
+				<b>ATOM GENERATOR - DEFAULT DROP</b>
+				<table>
+					<tr>
+						<td>
+							<b>Colors:</b>
+						</td>
+						<td>
+							<input type="checkbox" id="gen_color_r">Red(r)
+						</td>
+						<td>
+							<input type="checkbox" id="gen_color_p">Pink(p)
+						</td>
+						<td>
+							<input type="checkbox" id="gen_color_b">Blue(b)
+						</td>
+						<td>
+							<input type="checkbox" id="gen_color_c">Cyan(c)
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<input type="checkbox" id="gen_color_o">Orange(o)
+						</td>
+						<td>
+							<input type="checkbox" id="gen_color_v">Purple(v)
+						</td>
+						<td>
+							<input type="checkbox" id="gen_color_y">Yellow(y)
+						</td>
+						<td>
+							<input type="checkbox" id="gen_color_w">Brown(w)
+						</td>
+						<td>
+							<input type="checkbox" id="gen_color_t">Tan(t)
+						</td>
+					</tr>
+				</table>
+				<b>Types</b><br/>
+				<input type="checkbox"
+						id="gen_use_hole">Black Holes<br/>
+				<input type="text"
+						id="gen_hole_counts"
+						class="requirement_moves"
+						placeholder="Moves">
+				<input type="text"
+						id="gen_hole_percent"
+						class="requirement_moves"
+						placeholder="Drop%">
+				<br/>
+				<input type="checkbox"
+						id="gen_use_anti">Antimatter<br/>
+				<input type="text"
+						id="gen_anti_counts"
+						class="requirement_moves"
+						placeholder="Moves">
+				<input type="text"
+						id="gen_anti_percent"
+						class="requirement_moves"
+						placeholder="Drop%">
+				<br/>
+				<input type="checkbox"
+						id="gen_use_radio">Radioactive<br/>
+				<input type="text"
+						id="gen_radio_counts"
+						class="requirement_moves"
+						placeholder="Moves">
+				<input type="text"
+						id="gen_radio_percent"
+						class="requirement_moves"
+						placeholder="Drop%">
+				<br/>
+				<input type="checkbox"
+						id="gen_use_void">Voids<br/>
+				<input type="text"
+						id="gen_void_counts"
+						class="requirement_moves"
+						placeholder="Moves">
+				<input type="text"
+						id="gen_void_percent"
+						class="requirement_moves"
+						placeholder="Drop%">
+				<br/>
+				<input type="checkbox"
+						id="gen_use_freeze">Freeze<br/>
+				<input type="text"
+						id="gen_freeze_counts"
+						class="requirement_moves"
+						placeholder="Moves">
+				<input type="text"
+						id="gen_freeze_percent"
+						class="requirement_moves"
+						placeholder="Drop%">
+				<div class='atom_list' id="block_mouse">
+					<b>ATOM GENERATOR - DROP LIST</b>
+					<div class='canvasContainer'>
+						<canvas id="generatorCanvas"
+								width="850"
+								height="235"
+								class="canvasArea"
+								oncontextmenu="return false;" 
+								onselectstart="return false;">
+						</canvas>
+					</div>
+				</div>
+				<div class="copy_position">
+					<button id="copy_button"
+							class="btn btn-info">Copy</button>
+				</div>
+				<div class="paste_position">
+					<button id="paste_button"
+							class="btn btn-inverse">Paste</button>
+				</div>
+				<div class="clear_position">
+					<button id='clear_button'
+							class='btn btn-danger'>Clear</button>
+				</div>
+				<div class="done_position">
+					<button id="done_button"
+							class="btn btn-success">Done</button>
+				</div>
+				<div class="cancel_position">
+					<button id="cancel_button"
+							class="btn btn-danger">Cancel</button>
+				</div>
+			</div>
+		</div>
+		<div id="popupBlocker" style="position:absolute;display:none;z-index:29;left:0px;top:0px;width:100%;min-width:755px;height:100%;min-height:650px;background-color:#000000;opacity:.5;">
+			
+		</div>
+		<div id="browsePopup" style="position:absolute;display:none;z-index:30;">
+			
+		</div>
+	</body>
+</html>

@@ -1,0 +1,68 @@
+[28-Nov-2014 10:10:29 America/Denver] PHP Warning:  mysqli_fetch_object() expects parameter 1 to be mysqli_result, boolean given in /home2/hexplane/public_html/dev/big_bang/php/get_highscores.php on line 19
+[28-Nov-2014 10:10:29 America/Denver] PHP Warning:  mysqli_free_result() expects parameter 1 to be mysqli_result, boolean given in /home2/hexplane/public_html/dev/big_bang/php/get_highscores.php on line 23
+[28-Nov-2014 10:10:29 America/Denver] highscore_search: SELECT face_id,score FROM high_scores WHERE level=0 AND face_id IN ('1257158336') ORDER BY score DESC;
+[28-Nov-2014 10:19:06 America/Denver] result: 1
+[28-Nov-2014 10:19:06 America/Denver] PHP Warning:  mysqli_fetch_object() expects parameter 1 to be mysqli_result, boolean given in /home2/hexplane/public_html/dev/big_bang/php/get_highscores.php on line 22
+[28-Nov-2014 10:19:06 America/Denver] PHP Warning:  mysqli_free_result() expects parameter 1 to be mysqli_result, boolean given in /home2/hexplane/public_html/dev/big_bang/php/get_highscores.php on line 26
+[28-Nov-2014 10:19:06 America/Denver] highscore_search: SELECT face_id,score FROM high_scores WHERE level=0 AND face_id IN ('1257158336') ORDER BY score DESC;
+[28-Nov-2014 10:20:29 America/Denver] result: 
+[28-Nov-2014 10:20:29 America/Denver] PHP Warning:  mysqli_fetch_object() expects parameter 1 to be mysqli_result, boolean given in /home2/hexplane/public_html/dev/big_bang/php/get_highscores.php on line 22
+[28-Nov-2014 10:20:29 America/Denver] PHP Warning:  mysqli_free_result() expects parameter 1 to be mysqli_result, boolean given in /home2/hexplane/public_html/dev/big_bang/php/get_highscores.php on line 26
+[28-Nov-2014 10:20:29 America/Denver] highscore_search: SELECT face_id,score FROM high_scores WHERE level=0 AND face_id IN ('1257158336') ORDER BY score DESC;
+[28-Nov-2014 10:24:39 America/Denver] result: 
+[28-Nov-2014 10:24:39 America/Denver] PHP Warning:  mysqli_fetch_object() expects parameter 1 to be mysqli_result, boolean given in /home2/hexplane/public_html/dev/big_bang/php/get_highscores.php on line 22
+[28-Nov-2014 10:24:39 America/Denver] PHP Warning:  mysqli_free_result() expects parameter 1 to be mysqli_result, boolean given in /home2/hexplane/public_html/dev/big_bang/php/get_highscores.php on line 26
+[28-Nov-2014 10:24:39 America/Denver] highscore_search: SELECT face_id,score FROM high_scores WHERE level=0 AND face_id IN ('1257158336') ORDER BY score DESC;
+[28-Nov-2014 10:26:44 America/Denver] result: 
+[28-Nov-2014 10:26:44 America/Denver] PHP Warning:  mysqli_fetch_object() expects parameter 1 to be mysqli_result, boolean given in /home2/hexplane/public_html/dev/big_bang/php/get_highscores.php on line 22
+[28-Nov-2014 10:26:44 America/Denver] PHP Warning:  mysqli_free_result() expects parameter 1 to be mysqli_result, boolean given in /home2/hexplane/public_html/dev/big_bang/php/get_highscores.php on line 26
+[28-Nov-2014 10:26:44 America/Denver] highscore_search: SELECT face_id,score FROM high_scores WHERE level=0 AND face_id IN ('1257158336') ORDER BY score DESC;
+[28-Nov-2014 10:29:00 America/Denver] PHP Notice:  Undefined variable: friend_search in /home2/hexplane/public_html/dev/big_bang/php/get_highscores.php on line 19
+[28-Nov-2014 10:29:00 America/Denver] friends_search: 
+[28-Nov-2014 10:29:00 America/Denver] result: 
+[28-Nov-2014 10:29:00 America/Denver] PHP Warning:  mysqli_fetch_object() expects parameter 1 to be mysqli_result, boolean given in /home2/hexplane/public_html/dev/big_bang/php/get_highscores.php on line 25
+[28-Nov-2014 10:29:00 America/Denver] PHP Warning:  mysqli_free_result() expects parameter 1 to be mysqli_result, boolean given in /home2/hexplane/public_html/dev/big_bang/php/get_highscores.php on line 29
+[28-Nov-2014 10:29:00 America/Denver] highscore_search: SELECT face_id,score FROM high_scores WHERE level=0 AND face_id IN ('1257158336') ORDER BY score DESC;
+[28-Nov-2014 10:30:00 America/Denver] friends_search: SELECT friend_id FROM friends WHERE face_id='1257158336' AND is_player=1
+[28-Nov-2014 10:30:00 America/Denver] result: 
+[28-Nov-2014 10:30:00 America/Denver] PHP Warning:  mysqli_fetch_object() expects parameter 1 to be mysqli_result, boolean given in /home2/hexplane/public_html/dev/big_bang/php/get_highscores.php on line 25
+[28-Nov-2014 10:30:00 America/Denver] PHP Warning:  mysqli_free_result() expects parameter 1 to be mysqli_result, boolean given in /home2/hexplane/public_html/dev/big_bang/php/get_highscores.php on line 29
+[28-Nov-2014 10:30:00 America/Denver] highscore_search: SELECT face_id,score FROM high_scores WHERE level=0 AND face_id IN ('1257158336') ORDER BY score DESC;
+[28-Nov-2014 12:58:30 America/Denver] friends_search: SELECT friend_id FROM friends WHERE face_id='1257158336' AND is_playing=1
+[28-Nov-2014 12:58:30 America/Denver] result: mysqli_result Object
+(
+    [current_field] => 0
+    [field_count] => 1
+    [lengths] => 
+    [num_rows] => 1
+    [type] => 0
+)
+
+[28-Nov-2014 12:58:30 America/Denver] highscore_search: SELECT face_id,score FROM high_scores WHERE level=0 AND face_id IN ('1257158336','100007374105220') ORDER BY score DESC;
+[29-Nov-2014 10:49:55 America/Denver] PHP Fatal error:  Function name must be a string in /home2/hexplane/public_html/dev/big_bang/php/BB_loadLevel.php on line 8
+[29-Nov-2014 17:54:08 UTC] PHP Fatal error:  Uncaught OAuthException: Error validating access token: The session is invalid because the user logged out.
+  thrown in /home2/hexplane/public_html/dev/big_bang/lib/base_facebook.php on line 1340
+[03-Jan-2015 22:23:55 America/Denver] PHP Notice:  Undefined index: user_id in /home2/hexplane/public_html/dev/big_bang/php/get_highscores.php on line 3
+[03-Jan-2015 22:23:55 America/Denver] PHP Notice:  Undefined index: level in /home2/hexplane/public_html/dev/big_bang/php/get_highscores.php on line 4
+[03-Jan-2015 22:23:55 America/Denver] PHP Warning:  mysqli_fetch_object() expects parameter 1 to be mysqli_result, boolean given in /home2/hexplane/public_html/dev/big_bang/php/get_highscores.php on line 27
+[03-Jan-2015 22:23:55 America/Denver] PHP Warning:  mysqli_free_result() expects parameter 1 to be mysqli_result, boolean given in /home2/hexplane/public_html/dev/big_bang/php/get_highscores.php on line 31
+[04-Jan-2015 05:24:05 UTC] PHP Notice:  Undefined index: user_id in /home2/hexplane/public_html/dev/big_bang/php/life_check.php on line 5
+[04-Jan-2015 05:24:30 UTC] PHP Notice:  Undefined index: user_id in /home2/hexplane/public_html/dev/big_bang/php/complete_level.php on line 5
+[04-Jan-2015 05:24:30 UTC] PHP Notice:  Undefined index: lh in /home2/hexplane/public_html/dev/big_bang/php/complete_level.php on line 6
+[04-Jan-2015 05:24:30 UTC] PHP Notice:  Undefined index: meter in /home2/hexplane/public_html/dev/big_bang/php/complete_level.php on line 7
+[04-Jan-2015 05:24:30 UTC] PHP Notice:  Undefined index: score in /home2/hexplane/public_html/dev/big_bang/php/complete_level.php on line 8
+[04-Jan-2015 05:24:30 UTC] PHP Notice:  Undefined index: level_type in /home2/hexplane/public_html/dev/big_bang/php/complete_level.php on line 9
+[04-Jan-2015 05:24:30 UTC] PHP Notice:  Undefined index: remaining in /home2/hexplane/public_html/dev/big_bang/php/complete_level.php on line 10
+[04-Jan-2015 05:24:32 UTC] PHP Notice:  Undefined index: index in /home2/hexplane/public_html/dev/big_bang/php/BB_playLevel.php on line 8
+[04-Jan-2015 05:24:32 UTC] PHP Notice:  Undefined index: user_id in /home2/hexplane/public_html/dev/big_bang/php/BB_playLevel.php on line 9
+[03-Jan-2015 22:24:37 America/Denver] PHP Notice:  Undefined index: index in /home2/hexplane/public_html/dev/big_bang/php/BB_loadLevel.php on line 6
+[03-Jan-2015 22:24:37 America/Denver] PHP Notice:  Undefined index: user_id in /home2/hexplane/public_html/dev/big_bang/php/BB_loadLevel.php on line 7
+[03-Jan-2015 22:24:37 America/Denver] PHP Notice:  Undefined index: test_file in /home2/hexplane/public_html/dev/big_bang/php/BB_loadLevel.php on line 8
+[08-Jan-2015 13:05:47 America/Denver] PHP Warning:  fopen(../levels/steve/01.txt): failed to open stream: No such file or directory in /home2/hexplane/public_html/dev/big_bang/php/BB_loadLevel.php on line 47
+[08-Jan-2015 13:05:47 America/Denver] PHP Warning:  filesize(): stat failed for ../levels/steve/01.txt in /home2/hexplane/public_html/dev/big_bang/php/BB_loadLevel.php on line 48
+[08-Jan-2015 13:05:47 America/Denver] PHP Warning:  fread() expects parameter 1 to be resource, boolean given in /home2/hexplane/public_html/dev/big_bang/php/BB_loadLevel.php on line 48
+[08-Jan-2015 13:05:47 America/Denver] PHP Warning:  fclose() expects parameter 1 to be resource, boolean given in /home2/hexplane/public_html/dev/big_bang/php/BB_loadLevel.php on line 49
+[08-Jan-2015 13:06:26 America/Denver] PHP Warning:  fopen(../levels/steve/01.txt): failed to open stream: No such file or directory in /home2/hexplane/public_html/dev/big_bang/php/BB_loadLevel.php on line 47
+[08-Jan-2015 13:06:26 America/Denver] PHP Warning:  filesize(): stat failed for ../levels/steve/01.txt in /home2/hexplane/public_html/dev/big_bang/php/BB_loadLevel.php on line 48
+[08-Jan-2015 13:06:26 America/Denver] PHP Warning:  fread() expects parameter 1 to be resource, boolean given in /home2/hexplane/public_html/dev/big_bang/php/BB_loadLevel.php on line 48
+[08-Jan-2015 13:06:26 America/Denver] PHP Warning:  fclose() expects parameter 1 to be resource, boolean given in /home2/hexplane/public_html/dev/big_bang/php/BB_loadLevel.php on line 49

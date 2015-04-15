@@ -1,0 +1,61 @@
+.invites-container {
+    width: 606px;
+    height: 245px;
+    position: absolute;
+    left: 82px;
+    top: 230px;
+    z-index: 2;
+    overflow-y: auto;
+    overflow-x: none;
+    border: 1px solid #222222;
+    box-shadow:1px 1px 25px #222222 !important;
+    background-color: #222222;
+}
+
+.invites-div {
+    width: 586px;
+    z-index: 4;
+}
+
+.invites-canvas {
+    width: 586px;
+    height: 245px;   
+    z-index: 3;
+    position: absolute;
+    left: 83px;
+    top: 231px;
+}
+
+.invite-search-container {
+	width: 280px;
+	height: 47px;
+	z-index: 3;
+	position: absolute;
+	left: 200px;
+	top: 175px;
+}
+
+.invite-search {
+	width: 280px;
+	font-weight: 700;
+	background-color: #222222;
+	float: left;
+}
+
+input[placeholder] {
+	color:#001100 !important;
+	border: 1px solid #080 !important;
+	font-size:24px !important;
+}
+
+input[type="text"] {
+	background-color: #222222 !important;
+	color:#66ff66 !important;
+	font-size:24px !important;
+}
+
+input[type="text"]:focus, textarea:focus {
+	box-shadow:1px 1px 25px rgba(0, 174, 0, 0.5) !important;
+	border: 1px solid #0C0 !important;
+	font-size:24px !important;
+}

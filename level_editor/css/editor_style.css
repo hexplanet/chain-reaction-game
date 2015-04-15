@@ -1,0 +1,365 @@
+.grid_toggle {
+    position: absolute;
+    left: 180px;         
+    top: 615px;
+    display: none;
+    z-index: 3;
+}
+
+.user_help {
+    position: absolute;
+    left: 180px;
+    top: 5px;
+    display: none;
+    z-index: 3;
+}
+
+.test_play {
+    position: absolute;
+    left: 695px;
+    top: 5px;
+    display: none;
+    z-index: 3;
+}
+
+#grid_button {
+    outline: 0 !important;   
+}
+
+#help_button {
+    outline: 0 !important;   
+}
+
+.help_pane {
+    position: absolute;
+    left: 0px;         
+    top: 0px;
+    width: 165px;
+    height: 640px;
+    padding: 5px;
+    background: #ddddff;
+    z-index: 2;
+    display: none;
+    overflow-y: auto;
+}
+
+.generator_pane {
+    position: absolute;
+    left: 0px;         
+    top: 0px;
+    width: 165px;
+    height: 640px;
+    padding: 5px;
+    background: #ddddff;
+    z-index: 2;
+    display: none;
+    overflow-y: auto;
+}
+
+.help_pane .user_key {
+    font-weight: bold;
+    width: 40px;
+    text-align: center;
+}
+    
+.help_pane .piece_def {
+    font-style: italic;
+    margin-left: 10px;
+    font-size: 13px;
+}
+
+.edit_pane {          
+    position: absolute;
+    left: 0px;         
+    top: 0px;
+    width: 165px;
+    height: 640px;
+    padding: 5px;
+    background: #ffffdd;
+    z-index: 2;
+    display: none;
+}
+
+.filename_div {
+    margin-top: 3px;  
+}
+
+.edit_pane button {
+    outline: 0 !important;   
+}
+
+.edit_pane #level_id, #background_filename {
+    width: 120px;   
+    padding-right: 30px;
+}
+
+.msnoclear::-ms-clear {
+    display:none;
+}
+
+.clr_txt_btn {
+	background-color: transparent;
+	border: 0 none;
+	height: 24px;
+	width: 24px;
+	background-image: url("data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4NCjxzdmcgdmVyc2lvbj0iMS4xIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB4PSIwcHgiIHk9IjBweCINCgkgd2lkdGg9IjI0cHgiIGhlaWdodD0iMjRweCIgdmlld0JveD0iMCAwIDI0IDI0IiBlbmFibGUtYmFja2dyb3VuZD0ibmV3IDAgMCAyNCAyNCIgeG1sOnNwYWNlPSJwcmVzZXJ2ZSI+DQo8cG9seWdvbiBmaWxsPSIjNzc3Nzc3IiBwb2ludHM9IjE3LDcuODcgMTYuMTMsNyAxMiwxMS4xMyA3Ljg3LDcgNyw3Ljg3IDExLjEzLDEyIDcsMTYuMTMgNy44NywxNyAxMiwxMi44NyAxNi4xMywxNyAxNywxNi4xMyANCgkxMi44NywxMiAiLz4NCjwvc3ZnPg0K");
+	position: absolute;
+	display: none;
+}
+
+#clear_level_id {
+	top: 8px;
+	left: 136px;
+}
+
+#clear_background_filename {
+	top: 82px;
+	left: 136px;
+}
+
+.edit_pane .requirement_body .color-box {
+	width: 15px;
+	height: 15px;
+	float: right;
+	padding-right: 10px;
+	padding-top: 4px;
+}
+
+.edit_pane .requirement_body .c1 {
+	background-color: #ff0000;
+}
+
+.edit_pane .requirement_body .c2 {
+	background-color: #ff98de;
+}
+
+.edit_pane .requirement_body .c3 {
+	background-color: #0000ff;
+}
+
+.edit_pane .requirement_body .c4 {
+	background-color: #00ffff;
+}
+
+.edit_pane .requirement_body .c5 {
+	background-color: #ffaf00;
+}
+
+.edit_pane .requirement_body .c6 {
+	background-color: #c367c3;
+}
+
+.edit_pane .requirement_body .c7 {
+	background-color: #ffff00;
+}
+
+.edit_pane .requirement_body .c8 {
+	background-color: #966320;
+}
+
+.edit_pane .requirement_body .c9 {
+	background-color: #ebd699;
+}
+
+.edit_pane #save_level, #clear_background {
+    float: right;      
+}
+
+.edit_pane .requirement_input {
+    width: 60px;
+}
+
+.edit_pane .requirement_line {
+    vertical-align: 5px;
+}
+
+.edit_pane .requirement_number {
+    width: 60px;
+}
+
+.edit_pane .requirement_compound {
+    width: 75px;
+}
+
+.edit_pane .check_list input {
+    vertical-align: -1px;
+    margin: 2px;
+    outline: 0;
+}
+
+.edit_pane .general_check {
+    vertical-align: -1px;
+    margin: 2px;
+    outline: 0;
+}
+
+.edit_pane .requirement_header {
+    cursor: pointer;
+}
+
+.edit_pane .requirement_body {
+    display: none;
+    border: solid 1px black;
+    margin-left: 15px;
+    padding: 3px;
+    background: #ddffff;
+}
+
+.edit_pane .combos_body {
+    display: none;
+    border: solid 1px black;
+    margin-left: 15px;
+    padding: 3px;
+    background: #ddffff;
+    height: 300px;
+    overflow: auto; 
+}
+
+.edit_pane .requirement_count {
+    width: 30px;
+}
+
+.edit_pane .requirement_moves {
+    width: 50px;
+}
+
+.edit_pane .errorText {
+    color: #ff0000;
+}
+
+.edit_pane .normalText {
+    color: #000000;
+}
+
+.edit_pane .successText {
+    color: #00cc00;
+}
+
+.generator_menu {
+    position: absolute;
+    left: 175px;         
+    top: 0px;
+    display: none;
+}
+
+.generator_blocker {
+    position: absolute;
+    left: 0px;         
+    top: 0px;
+    width: 580px;
+    height: 650px;
+    z-index: 10;
+    background: #000000;
+    opacity: 0.6; 
+}
+
+.generator_data {
+    position: absolute;
+    left: 50px;         
+    top: 100px;
+    width: 460px;
+    height: 430px;
+    z-index: 11;
+    background: #ffffdd;
+    padding: 10px;
+    opacity: 1; 
+}
+
+.generator_data [type=checkbox] {
+    margin: 3px;
+    vertical-align: 0px;
+    outline: 0 !important;
+}
+
+.generator_data .copy_position {
+    position: absolute;
+    left: 10px;         
+    top: 410px;
+}
+
+.generator_data .paste_position {
+    position: absolute;
+    left: 80px;         
+    top: 410px;
+}
+
+.generator_data .clear_position {
+    position: absolute;
+    left: 205px;         
+    top: 410px;
+}
+
+.generator_data .done_position {
+    position: absolute;
+    left: 330px;         
+    top: 410px;
+}
+
+.generator_data .cancel_position {
+    position: absolute;
+    left: 400px;         
+    top: 410px;
+}
+
+.generator_data #copy_button {
+    outline: 0 !important;
+}
+
+.generator_data #paste_button {
+    outline: 0 !important;
+}
+
+.generator_data #clear_button {
+    outline: 0 !important;
+}
+
+.generator_data #done_button {
+    outline: 0 !important;
+}
+
+.generator_data #cancel_button {
+    outline: 0 !important;
+}
+
+.generator_data .requirement_count {
+    width: 30px;
+}
+
+.generator_data .requirement_moves {
+    width: 50px;
+}
+
+.generator_data td {
+    width: 88px;
+}
+
+.generator_data .atom_list {
+    position: absolute;
+    left: 150px;         
+    top: 87px;
+    width: 300px;
+    height: 282px;
+    z-index: 12;
+    background: #ddffff;
+    padding: 10px;
+    border: black 1px solid; 
+}
+
+.generator_data .canvasContainer {
+    position: absolute;
+    left: 10px;         
+    top: 40px;
+    width: 300px;
+    height: 252px;
+    z-index: 13;
+    overflow: auto;
+}
+
+.popupFilename .popupFilenameSelected {
+	font-family: verdana;
+	font-size: 14px;
+	background-color: #FFFFFF;
+}
+.popupFilenameSelected {
+	background-color: #CCCCCC;
+}

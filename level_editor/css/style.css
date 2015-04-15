@@ -1,0 +1,10 @@
+.edit_pane {          
+    position: absolute;
+    left: 0px;         
+    top: 0px;
+    width: 165px;
+    height: 640px;
+    padding: 5px;
+    background: #FFFFDD;
+    z-index: 2;    
+}                      
